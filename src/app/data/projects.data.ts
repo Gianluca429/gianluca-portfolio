@@ -184,6 +184,6 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
         'Su smartphone l’interfaccia cambia struttura: navigazione compatta, filtri adattivi e contenuti trasformati in card permettono di mantenere leggibilità e operatività.',
     },
 
-    demoUrl: '/pulse-dashboard/',
+    demoUrl: 'https://pulse.gianlucaguarino.it',
   },
 ];

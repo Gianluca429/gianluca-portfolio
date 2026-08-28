@@ -1,0 +1,55 @@
+$ORIGIN gianlucaguarino.it.
+@                      3600 SOA dns3.arubadns.net. (
+                           hostmaster.gianlucaguarino.it.    ; address of responsible party 
+                           2026082803    ; serial number 
+                           10800    ; refresh period 
+                           3600    ; retry period 
+                           604800    ; expire time 
+                           3600   ) ; minimum ttl
+a1._domainkey                       3600 TXT   "v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoOhAWzBuKQYXU6E3E9efq+DPvtkkvWPg3EtB+BT2cTrMGh6Xy00mXfPi/EzubRpbhHpv3b3k1d65Vyhmpp5O3HzTQyzIqYMMF5iF5y05D5aEux3pj/i1g5LkAOFE0Xdf+wnI8zppP2jP7IV4bwKPr1OnBqOjs8hfBWSEGaCSFD/aVbOdNldHiwSalzDL38E+IcT0KQB+BdutC2T9B5idcSPaBY57sC4hq31wpBlgNcYpIMDxOQN+E9E+TbgnlJYCOYsD5S0amYFivcJObjSGpdstMBfaM1ox5iEQVpEhLz5cwgohjrMst2us7G9eHZ6p2jR7X+/yTP8ryAAywzMJ5wIDAQAB"
+mx                       3600 A   62.149.128.160
+mx                       3600 A   62.149.128.151
+mx                       3600 A   62.149.128.154
+mx                       3600 A   62.149.128.157
+mx                       3600 A   62.149.128.163
+mx                       3600 A   62.149.128.166
+mx                       3600 A   62.149.128.74
+www                       3600 CNAME   gianlucaguarino.it.
+localhost                       3600 A   127.0.0.1
+_domainconnect                       3600 CNAME   _domainconnect.hst.aruba.it.
+smtp                       3600 A   62.149.128.203
+smtp                       3600 A   62.149.128.200
+smtp                       3600 A   62.149.128.202
+smtp                       3600 A   62.149.128.201
+ftp                       3600 CNAME   www.gianlucaguarino.it.
+_xmpp-client._tcp                       3600 SRV   5 0 5222 imchat1.aruba.it.
+_xmpp-server._tcp                       3600 SRV   5 0 5269 imchat1.aruba.it.
+_autodiscover._tcp                       3600 SRV   0 0 443 autodiscover.aruba.it.
+imap                       3600 CNAME   imaps.aruba.it.
+admin                       3600 CNAME   admin.redirect.aruba.it.
+webmail                       3600 A   62.149.158.91
+webmail                       3600 A   62.149.158.92
+mail                       3600 A   62.149.128.166
+mail                       3600 A   62.149.128.154
+mail                       3600 A   62.149.128.163
+mail                       3600 A   62.149.128.74
+mail                       3600 A   62.149.128.160
+mail                       3600 A   62.149.128.157
+mail                       3600 A   62.149.128.151
+autoconfig                       3600 CNAME   autodiscover.aruba.it.
+_dmarc                       3600 TXT   "v=DMARC1; p=none; adkim=r; aspf=r;"
+pop3                       3600 A   62.149.128.75
+pop3                       3600 A   62.149.128.152
+pop3                       3600 A   62.149.128.73
+pop3                       3600 A   62.149.128.167
+pop3                       3600 A   62.149.128.164
+pop3                       3600 A   62.149.128.161
+pop3                       3600 A   62.149.128.158
+pop3                       3600 A   62.149.128.155
+@                       3600 TXT   "v=spf1 include:_spf.aruba.it ~all"
+@                       3600 MX   10 mx.gianlucaguarino.it.
+@                       3600 NS   dns.technorail.com.
+@                       3600 NS   dns4.arubadns.cz.
+@                       3600 NS   dns3.arubadns.net.
+@                       3600 NS   dns2.technorail.com.
+@                       3600 A   62.149.128.40
