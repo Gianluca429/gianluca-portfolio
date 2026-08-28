@@ -122,7 +122,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
         'Su mobile la gerarchia editoriale resta protagonista: tipografia, immagini e spazi si ricompongono mantenendo il carattere minimale del progetto.',
     },
 
-    demoUrl: '/forma-studio/',
+    demoUrl: 'https://forma.gianlucaguarino.it',
   },
 
   {
