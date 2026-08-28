@@ -60,7 +60,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
         'La stessa atmosfera viene mantenuta anche su smartphone, con una composizione verticale che dà priorità a fotografia, contenuto e prenotazione.',
     },
 
-    demoUrl: '/osteria-lume/',
+    demoUrl: 'https://osteria.gianlucaguarino.it',
   },
 
   {
