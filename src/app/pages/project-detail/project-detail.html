@@ -1,0 +1,256 @@
+@if (project(); as project) {
+  <div class="case-study" id="top">
+    <header class="case-nav">
+      <a class="case-nav__brand" routerLink="/" aria-label="Torna alla homepage">
+        G<span>.</span>
+      </a>
+
+      <a class="case-nav__back" routerLink="/" fragment="projects">
+        <span aria-hidden="true"> ← </span>
+
+        Tutti i progetti
+      </a>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="case-hero">
+        <div class="case-hero__heading">
+          <p class="case-hero__eyebrow">{{ projectNumber() }} / {{ project.category }}</p>
+
+          <h1>
+            {{ project.name }}
+          </h1>
+        </div>
+
+        <div class="case-hero__intro">
+          <p>
+            {{ project.description }}
+          </p>
+
+          <span>
+            {{ project.projectType }}
+          </span>
+        </div>
+
+        <div class="case-hero__meta">
+          <div>
+            <span> Anno </span>
+
+            <strong>
+              {{ project.year }}
+            </strong>
+          </div>
+
+          <div>
+            <span> Ruolo </span>
+
+            <strong>
+              {{ project.role }}
+            </strong>
+          </div>
+
+          <div>
+            <span> Tecnologie </span>
+
+            <div class="case-hero__technologies">
+              @for (technology of project.technologies; track technology) {
+                <strong>
+                  {{ technology }}
+                </strong>
+              }
+            </div>
+          </div>
+        </div>
+
+        <figure class="case-hero__visual">
+          <img [src]="project.image" [alt]="project.imageAlt" />
+        </figure>
+      </section>
+
+      <!-- STORY -->
+      <section class="case-story">
+        <div class="case-story__overview">
+          <p class="case-story__eyebrow">Panoramica</p>
+
+          <p class="case-story__lead">
+            {{ project.overview }}
+          </p>
+        </div>
+
+        <div class="case-story__details">
+          <article class="case-story__block">
+            <span class="case-story__number"> 01 </span>
+
+            <div>
+              <h2>La sfida</h2>
+
+              <p>
+                {{ project.challenge }}
+              </p>
+            </div>
+          </article>
+
+          <article class="case-story__block">
+            <span class="case-story__number"> 02 </span>
+
+            <div>
+              <h2>L’approccio</h2>
+
+              <p>
+                {{ project.approach }}
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="case-highlights">
+        <header class="case-highlights__header">
+          <p class="case-highlights__eyebrow">Punti chiave</p>
+
+          <h2>
+            Le scelte che hanno
+            <span> definito il progetto </span>.
+          </h2>
+        </header>
+
+        <div class="case-highlights__list">
+          @for (highlight of project.highlights; track highlight; let index = $index) {
+            <article class="case-highlight">
+              <span>
+                {{ formatIndex(index) }}
+              </span>
+
+              <p>
+                {{ highlight }}
+              </p>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="case-gallery">
+        <header class="case-gallery__header">
+          <p class="case-gallery__eyebrow">Dentro il progetto</p>
+
+          <h2>
+            Il progetto,
+            <span> da vicino </span>.
+          </h2>
+
+          <p>
+            Una selezione di schermate per raccontare struttura, dettagli e comportamento
+            dell’esperienza.
+          </p>
+        </header>
+
+        <figure class="case-gallery__main">
+          <img [src]="project.gallery.main.src" [alt]="project.gallery.main.alt" />
+        </figure>
+
+        <div class="case-gallery__secondary">
+          @for (image of project.gallery.secondary; track image.src) {
+            <figure>
+              <img [src]="image.src" [alt]="image.alt" />
+            </figure>
+          }
+        </div>
+
+        <div class="case-gallery__mobile">
+          <div class="case-gallery__mobile-copy">
+            <p class="case-gallery__eyebrow">Responsive</p>
+
+            <h3>
+              La stessa esperienza,
+              <span> su ogni schermo </span>.
+            </h3>
+
+            <p>
+              {{ project.gallery.mobileText }}
+            </p>
+          </div>
+
+          <figure class="case-gallery__phone">
+            <img [src]="project.gallery.mobile.src" [alt]="project.gallery.mobile.alt" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- OUTRO -->
+      @if (nextProject(); as nextProject) {
+        <section class="case-outro">
+          <div class="case-outro__inner">
+            <div class="case-outro__demo">
+              <p>Vuoi esplorarlo?</p>
+
+              <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer">
+                Visita il progetto
+
+                <span aria-hidden="true"> ↗ </span>
+              </a>
+            </div>
+
+            <a class="case-outro__next" [routerLink]="['/projects', nextProject.slug]">
+              <span class="case-outro__label"> Progetto successivo </span>
+
+              <span class="case-outro__name">
+                {{ nextProject.name }}
+              </span>
+
+              <span class="case-outro__arrow" aria-hidden="true"> → </span>
+            </a>
+          </div>
+        </section>
+      }
+
+      <!-- FOOTER -->
+      <footer class="case-footer">
+        <div class="case-footer__inner">
+          <a class="case-footer__brand" routerLink="/" aria-label="Torna alla homepage">
+            G<span>.</span>
+          </a>
+
+          <div class="case-footer__copy">
+            <strong> Front-end developer </strong>
+
+            <span> Design, sviluppo e attenzione ai dettagli. </span>
+          </div>
+
+          <nav class="case-footer__nav" aria-label="Navigazione footer">
+            <a routerLink="/" fragment="projects"> Progetti </a>
+
+            <a routerLink="/" fragment="services"> Servizi </a>
+
+            <a routerLink="/" fragment="about"> Chi sono </a>
+          </nav>
+
+          <button
+            class="case-footer__top"
+            type="button"
+            aria-label="Torna all'inizio della pagina"
+            (click)="scrollToTop()"
+          >
+            ↑
+          </button>
+        </div>
+
+        <div class="case-footer__bottom">
+          <span> © 2026 Gianluca. </span>
+
+          <span> Portfolio personale · Front-end development </span>
+        </div>
+      </footer>
+    </main>
+  </div>
+} @else {
+  <main class="not-found">
+    <p>404</p>
+
+    <h1>Progetto non trovato.</h1>
+
+    <a routerLink="/"> Torna alla homepage → </a>
+  </main>
+}

@@ -1,0 +1,377 @@
+<app-navbar />
+
+<main id="top">
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Front-end developer</p>
+
+      <h1 class="hero__title">
+        Progetto e sviluppo
+        <span>esperienze web</span>
+        moderne e curate.
+      </h1>
+
+      <p class="hero__intro">
+        Siti web, portfolio e interfacce responsive pensati per attività, professionisti e prodotti
+        digitali.
+      </p>
+
+      <div class="hero__actions">
+        <a class="hero__primary" href="#projects">
+          Vedi i progetti
+          <span aria-hidden="true">↓</span>
+        </a>
+
+        <a class="hero__secondary" href="#contact">
+          Parliamo del tuo progetto
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__image-wrap">
+        <img
+          class="hero__image"
+          src="images/hero-portfolio.jpg"
+          alt="Postazione di lavoro minimal con codice front-end e anteprima di un'interfaccia web"
+        />
+      </div>
+
+      <div class="hero__meta">
+        <span class="hero__meta-line"></span>
+
+        <div>
+          <p>Design, sviluppo e attenzione ai dettagli.</p>
+
+          <span> Italia · Disponibile per progetti freelance </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <header class="projects__header">
+      <div>
+        <p class="projects__eyebrow">Progetti selezionati</p>
+
+        <h2>
+          Una selezione di lavori
+          <span>pensati e sviluppati con cura.</span>
+        </h2>
+      </div>
+
+      <p class="projects__intro">
+        Tre progetti diversi per obiettivi e linguaggio, accomunati dalla stessa attenzione per
+        design, usabilità e sviluppo front-end.
+      </p>
+    </header>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.slug) {
+        <article class="project-card">
+          <a
+            class="project-card__image-wrap"
+            [routerLink]="['/projects', project.slug]"
+            [attr.aria-label]="'Scopri il progetto ' + project.name"
+          >
+            <img class="project-card__image" [src]="project.image" [alt]="project.imageAlt" />
+
+            <span class="project-card__category">
+              {{ project.category }}
+            </span>
+          </a>
+
+          <div class="project-card__body">
+            <h3>
+              <a [routerLink]="['/projects', project.slug]">
+                {{ project.name }}
+              </a>
+            </h3>
+
+            <p>
+              {{ project.description }}
+            </p>
+
+            <div class="project-card__technologies">
+              @for (technology of project.technologies; track technology) {
+                <span>
+                  {{ technology }}
+                </span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <header class="services__header">
+      <p class="services__eyebrow">Cosa posso realizzare</p>
+
+      <h2>Soluzioni digitali costruite intorno alle <span>tue esigenze</span>.</h2>
+    </header>
+
+    <div class="services__grid">
+      <article class="service">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+            <path d="M8 21h8"></path>
+            <path d="M12 18v3"></path>
+            <path d="M3 8h18"></path>
+          </svg>
+        </div>
+
+        <span class="service__number"> 01 </span>
+
+        <h3>Siti web e landing page</h3>
+
+        <p>
+          Siti moderni, veloci e responsive progettati per presentare al meglio attività, servizi e
+          idee.
+        </p>
+
+        <span class="service__line"></span>
+      </article>
+
+      <article class="service">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path>
+          </svg>
+        </div>
+
+        <span class="service__number"> 02 </span>
+
+        <h3>Portfolio e siti professionali</h3>
+
+        <p>
+          Esperienze digitali curate per valorizzare identità, competenze e lavoro di professionisti
+          e studi.
+        </p>
+
+        <span class="service__line"></span>
+      </article>
+
+      <article class="service">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+          </svg>
+        </div>
+
+        <span class="service__number"> 03 </span>
+
+        <h3>Dashboard e interfacce web</h3>
+
+        <p>
+          Interfacce responsive e funzionali pensate per organizzare dati, contenuti e processi con
+          chiarezza.
+        </p>
+
+        <span class="service__line"></span>
+      </article>
+
+      <article class="service">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 14a8 8 0 1 1 16 0"></path>
+            <path d="M12 14l4-4"></path>
+            <circle cx="12" cy="14" r="1"></circle>
+            <path d="M6 14H4"></path>
+            <path d="M20 14h-2"></path>
+          </svg>
+        </div>
+
+        <span class="service__number"> 04 </span>
+
+        <h3>Performance e qualità</h3>
+
+        <p>
+          Codice pulito, responsive e ottimizzato, con attenzione a velocità, accessibilità e
+          usabilità.
+        </p>
+
+        <span class="service__line"></span>
+      </article>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="process__inner">
+      <div class="process__steps">
+        <article class="process-step">
+          <span class="process-step__number"> 01 </span>
+
+          <h3>Ascolto</h3>
+
+          <p>
+            Partiamo da esigenze, obiettivi e pubblico per definire insieme la direzione del
+            progetto.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <span class="process-step__number"> 02 </span>
+
+          <h3>Progetto</h3>
+
+          <p>
+            Strutturo contenuti, gerarchie ed esperienza visiva trasformando le idee in
+            un’interfaccia concreta.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <span class="process-step__number"> 03 </span>
+
+          <h3>Sviluppo</h3>
+
+          <p>
+            Costruisco il progetto con codice responsive, curando performance, usabilità e
+            interazioni.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <span class="process-step__number"> 04 </span>
+
+          <h3>Consegna</h3>
+
+          <p>
+            Testo, ottimizzo e pubblico il progetto, verificando che tutto funzioni come previsto.
+          </p>
+        </article>
+      </div>
+
+      <header class="process__intro">
+        <p class="process__eyebrow">Il mio metodo</p>
+
+        <h2>Un processo chiaro, dall’idea al <span>progetto online</span>.</h2>
+
+        <p class="process__description">
+          Un buon progetto non parte dal codice, ma dalle domande giuste. Ogni fase serve a
+          trasformare esigenze e obiettivi in una soluzione concreta.
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about__visual">
+      <img
+        src="images/about-workspace.jpg"
+        alt="Dettaglio di una postazione di lavoro dedicata al design e allo sviluppo web"
+      />
+    </div>
+
+    <div class="about__content">
+      <p class="about__eyebrow">Chi sono</p>
+
+      <h2>Passione per il design. Precisione nel <span>codice</span>.</h2>
+
+      <div class="about__copy">
+        <p>
+          Sono Gianluca, front-end developer con una particolare attenzione al design, alla
+          chiarezza e ai dettagli.
+        </p>
+
+        <p>
+          Mi piace trasformare idee e obiettivi in esperienze web responsive, curate e semplici da
+          utilizzare.
+        </p>
+
+        <p>
+          Lavoro principalmente con Angular, TypeScript e SCSS, cercando sempre il giusto equilibrio
+          tra estetica, usabilità e qualità del codice.
+        </p>
+      </div>
+
+      <div class="about__details">
+        <div>
+          <span>Focus</span>
+          <strong>Front-end development</strong>
+        </div>
+
+        <div>
+          <span>Approccio</span>
+          <strong>Design + codice</strong>
+        </div>
+
+        <div>
+          <span>Disponibilità</span>
+          <strong>Progetti freelance</strong>
+        </div>
+      </div>
+
+      <a class="about__contact" href="#contact">
+        Parliamo del tuo progetto
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <div>
+        <p class="contact__eyebrow">Hai un progetto in mente?</p>
+
+        <h2>
+          Raccontamelo, creiamo qualcosa
+          <span>di unico.</span>
+        </h2>
+      </div>
+
+      <div class="contact__side">
+        <p>
+          Che si tratti di un sito, un portfolio o un’interfaccia web, possiamo partire da un’idea e
+          trasformarla in qualcosa di concreto.
+        </p>
+
+        <a
+          class="contact__action"
+          href="mailto:ciao@gianlucaguarino.it?subject=Richiesta%20progetto%20web"
+        >
+          Parliamo del tuo progetto
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <a class="footer__brand" href="#top" aria-label="Torna all'inizio"> G<span>.</span> </a>
+
+      <div class="footer__copy">
+        <strong> Front-end developer </strong>
+
+        <span> Design, sviluppo e attenzione ai dettagli. </span>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigazione footer">
+        <a href="#projects"> Progetti </a>
+
+        <a href="#services"> Servizi </a>
+
+        <a href="#process"> Metodo </a>
+
+        <a href="#about"> Chi sono </a>
+      </nav>
+
+      <a class="footer__top" href="#top" aria-label="Torna all'inizio della pagina"> ↑ </a>
+    </div>
+
+    <div class="footer__bottom">
+      <span> © 2026 Gianluca. </span>
+
+      <span> Portfolio personale · Front-end development </span>
+    </div>
+  </footer>
+</main>

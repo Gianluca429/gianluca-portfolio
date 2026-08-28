@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-background: #f4efe8;
+    --color-surface: #fbf8f3;
+
+    --color-text: #1f1a17;
+    --color-text-muted: #67615c;
+
+    --color-accent: #5f92bb;
+    --color-accent-dark: #3f6f94;
+    --color-accent-soft: #e7f0f7;
+
+    --color-border: #dcd3ca;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --transition-fast: 180ms ease;
+    --transition-normal: 320ms ease;
+
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-sans);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: #fff;
+}

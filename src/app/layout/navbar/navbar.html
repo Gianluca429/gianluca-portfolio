@@ -1,0 +1,73 @@
+<header class="navbar">
+  <a class="navbar__brand" href="#top" aria-label="Torna all'inizio" (click)="closeMenu()">
+    <span class="navbar__brand-mark"> G<span class="navbar__brand-dot">.</span> </span>
+
+    <span class="navbar__brand-role"> Front-end Developer </span>
+  </a>
+
+  <nav class="navbar__nav" aria-label="Navigazione principale">
+    <a href="#projects"> Progetti </a>
+
+    <a href="#services"> Servizi </a>
+
+    <a href="#process"> Metodo </a>
+
+    <a href="#about"> Chi sono </a>
+  </nav>
+
+  <div class="navbar__actions">
+    <a class="navbar__cta" href="#contact">
+      Parliamone
+
+      <span aria-hidden="true"> ↗ </span>
+    </a>
+
+    <button
+      class="navbar__menu"
+      type="button"
+      aria-label="Apri o chiudi il menu"
+      aria-controls="mobile-navigation"
+      [attr.aria-expanded]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span class="navbar__menu-line" [class.is-open]="isMenuOpen()"></span>
+
+      <span class="navbar__menu-line" [class.is-open]="isMenuOpen()"></span>
+    </button>
+  </div>
+</header>
+
+@if (isMenuOpen()) {
+  <div class="mobile-menu" id="mobile-navigation">
+    <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+      <a href="#projects" (click)="closeMenu()">
+        <span>01</span>
+        Progetti
+      </a>
+
+      <a href="#services" (click)="closeMenu()">
+        <span>02</span>
+        Servizi
+      </a>
+
+      <a href="#process" (click)="closeMenu()">
+        <span>03</span>
+        Metodo
+      </a>
+
+      <a href="#about" (click)="closeMenu()">
+        <span>04</span>
+        Chi sono
+      </a>
+    </nav>
+
+    <div class="mobile-menu__bottom">
+      <p>Disponibile per progetti freelance</p>
+
+      <a href="#contact" (click)="closeMenu()">
+        Parliamo del tuo progetto
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+}
