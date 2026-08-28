@@ -149,8 +149,8 @@
     &__image {
         width: 100%;
         height: 100%;
-
         object-fit: cover;
+        object-position: calc(50% - 67px) center;
     }
 
     &__meta {
@@ -1084,7 +1084,7 @@
         }
 
         &__title {
-            font-size: clamp(46px, 14vw, 66px);
+            font-size: clamp(42px, 12.5vw, 58px);
             line-height: 0.97;
         }
 
@@ -1341,5 +1341,27 @@
             flex-direction: column;
             gap: 6px;
         }
+    }
+}
+
+@media (max-width: 430px) {
+    .projects {
+        &__grid {
+            gap: 135px;
+        }
+    }
+
+    .project-card {
+        height: clamp(246px,
+                calc(76vw - 39px),
+                284px);
+    }
+}
+
+@media (max-width: 375px) {
+    .project-card {
+        height: clamp(215px,
+                calc(56.3636vw + 34.6364px),
+                246px);
     }
 }
