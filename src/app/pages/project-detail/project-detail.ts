@@ -2,12 +2,11 @@ import { Component, computed, effect, inject } from '@angular/core';
 
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
-import { Title } from '@angular/platform-browser';
 import { toSignal } from '@angular/core/rxjs-interop';
-
 import { map } from 'rxjs';
 
 import { PORTFOLIO_PROJECTS } from '../../data/projects.data';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -17,7 +16,7 @@ import { PORTFOLIO_PROJECTS } from '../../data/projects.data';
 })
 export class ProjectDetail {
   private readonly route = inject(ActivatedRoute);
-  private readonly titleService = inject(Title);
+  private readonly seoService = inject(SeoService);
 
   private readonly slug = toSignal(this.route.paramMap.pipe(map((params) => params.get('slug'))), {
     initialValue: null,
@@ -59,18 +58,29 @@ export class ProjectDetail {
 
   constructor() {
     effect(() => {
-      const currentProject = this.project();
+      const project = this.project();
       const slug = this.slug();
 
-      if (currentProject) {
-        this.titleService.setTitle(`${currentProject.name} | Gianluca Guarino`);
+      if (!slug) {
+        return;
+      }
+
+      if (!project) {
+        this.seoService.update({
+          title: 'Progetto non trovato | Gianluca Guarino',
+          description: 'Il progetto richiesto non è disponibile nel portfolio di Gianluca Guarino.',
+          canonical: `https://gianlucaguarino.it/projects/${slug}`,
+        });
 
         return;
       }
 
-      if (slug) {
-        this.titleService.setTitle('Progetto non trovato | Gianluca Guarino');
-      }
+      this.seoService.update({
+        title: `${project.name} | Gianluca Guarino`,
+        description: project.description,
+        canonical: `https://gianlucaguarino.it/projects/${project.slug}`,
+        image: `https://gianlucaguarino.it/${project.image}`,
+      });
     });
   }
 
