@@ -198,7 +198,7 @@
     width: min(100% - 48px, 1240px);
 
     margin-inline: auto;
-    padding: 96px 0 112px;
+    padding: 96px 0 140px;
 
     border-top: 1px solid var(--color-border);
 
@@ -249,13 +249,14 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 150px 18px;
     }
 }
 
 .project-card {
     min-width: 0;
+    height: auto;
 
     &__image-wrap {
         position: relative;
@@ -970,7 +971,7 @@
 
 @media (max-width: 900px) {
     .projects {
-        padding: 80px 0 96px;
+        padding: 80px 0 150px;
 
         &__header {
             grid-template-columns: 1fr;
@@ -979,7 +980,7 @@
 
         &__grid {
             grid-template-columns: 1fr;
-            gap: 52px;
+            gap: 150px;
         }
     }
 
@@ -1126,7 +1127,7 @@
     .projects {
         width: min(100% - 32px, 1240px);
 
-        padding: 64px 0 76px;
+        padding: 64px 0 150px;
 
         &__header {
             margin-bottom: 38px;

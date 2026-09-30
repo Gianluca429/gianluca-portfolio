@@ -186,4 +186,66 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 
     demoUrl: 'https://pulse.gianlucaguarino.it',
   },
+
+  {
+    slug: 'dock',
+    name: 'DOCK',
+    category: 'E-commerce concept',
+
+    description:
+      'Un concept e-commerce premium dedicato a workspace, audio e power, con un’esperienza d’acquisto essenziale e interattiva.',
+
+    image: 'images/projects/dock.jpg',
+    imageAlt: 'Anteprima dell’e-commerce concept DOCK',
+
+    technologies: ['Angular', 'TypeScript', 'SCSS', 'Signals'],
+
+    year: '2026',
+    role: 'Design, UX/UI & Front-end',
+    projectType: 'E-commerce concept',
+
+    overview:
+      'DOCK è un concept e-commerce premium dedicato alla tecnologia per il setup quotidiano. Il progetto unisce una direzione visiva scura e minimale a un catalogo curato, pagine categoria e un configuratore interattivo pensato per comporre il proprio setup.',
+
+    challenge:
+      'La sfida era costruire un’esperienza e-commerce riconoscibile senza appoggiarsi a un backend reale, mantenendo però credibili navigazione, catalogo, carrello e interazioni su desktop e mobile.',
+
+    approach:
+      'Ho sviluppato l’interfaccia in Angular con componenti riutilizzabili, Signals e persistenza locale del carrello. La struttura è stata progettata per mantenere coerenza tra Home, Shop, categorie e Setup Builder, con particolare attenzione a gerarchia visiva, responsive design e microinterazioni.',
+
+    highlights: [
+      'Catalogo responsive con filtri per categoria',
+      'Carrello persistente con Angular Signals e localStorage',
+      'Setup Builder interattivo con selezione per categoria',
+      'Sistema visivo coerente tra desktop, tablet e mobile',
+    ],
+
+    gallery: {
+      main: {
+        src: 'images/projects/dock/gallery-main.jpg',
+        alt: 'Hero desktop del concept e-commerce DOCK',
+      },
+
+      secondary: [
+        {
+          src: 'images/projects/dock/gallery-01.jpg',
+          alt: 'Shop di DOCK con filtri e griglia prodotti',
+        },
+        {
+          src: 'images/projects/dock/gallery-02.jpg',
+          alt: 'Setup Builder di DOCK con configurazione completa',
+        },
+      ],
+
+      mobile: {
+        src: 'images/projects/dock/mobile.jpg',
+        alt: 'Hero mobile del concept e-commerce DOCK',
+      },
+
+      mobileText:
+        'Su smartphone DOCK mantiene la stessa identità visiva con una navigazione compatta, CTA a tutta larghezza, composizioni verticali e contenuti pensati per restare leggibili e immediati.',
+    },
+
+    demoUrl: 'https://dock.gianlucaguarino.it',
+  },
 ];
