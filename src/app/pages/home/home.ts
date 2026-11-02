@@ -19,9 +19,9 @@ export class Home {
 
   constructor() {
     this.seoService.update({
-      title: 'Gianluca Guarino | Front-end Developer',
+      title: 'Realizzazione siti web a Napoli | Gianluca Guarino',
       description:
-        'Front-end Developer specializzato nella progettazione e sviluppo di siti web, portfolio e interfacce moderne con Angular, TypeScript e SCSS.',
+        "Realizzo siti web su misura a Napoli per professionisti e piccole attività. Design, sviluppo responsive e confronto diretto, dall'idea alla pubblicazione.",
       canonical: 'https://gianlucaguarino.it/',
       image: 'https://gianlucaguarino.it/images/og-portfolio.jpg',
     });

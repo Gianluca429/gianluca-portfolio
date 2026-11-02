@@ -7,7 +7,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Home,
-    title: 'Gianluca Guarino | Front-end Developer',
+    title: 'Realizzazione siti web a Napoli | Gianluca Guarino',
   },
   {
     path: 'projects/:slug',
